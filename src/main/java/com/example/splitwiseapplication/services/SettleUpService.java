@@ -28,9 +28,10 @@ public class SettleUpService {
         return null;
     }
 
-    public List<Transaction> settleUpGroup(Long group_id){
+    public List<Transaction> settleUpGroup(Long group_id) throws RuntimeException {
         Optional<Group> groupOptional = groupRepo.findById(group_id);
         if(groupOptional.isEmpty()){
+            System.out.println("Group not found");
             throw new RuntimeException("Group does not exist");
         }
         Group group = groupOptional.get();

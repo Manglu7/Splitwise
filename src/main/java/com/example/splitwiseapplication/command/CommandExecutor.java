@@ -26,7 +26,9 @@ public class CommandExecutor {
     public void execute(String input) {
         for (Command command : commands) {
             if (command.matches(input)) {
+
                 command.execute(input);
+
             }
         }
     }

@@ -18,6 +18,6 @@ public class Expense extends BaseModel {
     private User createdBy;
     @Enumerated(EnumType.ORDINAL)
     private ExpenseType type;
-    @OneToMany(mappedBy = "expense")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "expense")
     private List<UserExpense> userExpenses;
 }
